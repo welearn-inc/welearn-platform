@@ -37,7 +37,7 @@ JWT_AUTH = {
     'JWT_RESPONSE_PAYLOAD_HANDLER':
     'rest_framework_jwt.utils.jwt_response_payload_handler',
 
-    'JWT_SECRET_KEY': os.environ['SECRET_KEY'],
+    'JWT_SECRET_KEY': os.environ.get('SECRET_KEY', 'AAs65snz9+3vnhjmr3hijb0u@&w68t#5_e8s9-lbfhv-'),
     'JWT_GET_USER_SECRET_KEY': None,
     'JWT_PUBLIC_KEY': None,
     'JWT_PRIVATE_KEY': None,
