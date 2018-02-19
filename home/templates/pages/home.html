@@ -1,0 +1,1367 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="banner-wrapper">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="banner-container text-center">
+            <div class="banner-title">
+              <h1>Achieve anything you want to achieve</h1>
+            </div>
+            <div class="banner-desc">
+              Take in-depth online courses and meet any challenge with skill.
+            </div>
+            <div class="banner-search">
+              <form class="banner-form">
+                <input type="text" class="form-control banner-field simplebox" placeholder="What would you like accomplish?">
+                <a class="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+              </form>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Feature Section -->
+<section class="feature">
+  <div class="feature-wrapper">
+    <div class="container-fluid" style="padding-top: 0">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="feature-container">
+            <div class="row row-eq-height">
+              <div class="col-md-4">
+                <div class="feature-item">
+                  <div class="feature-item-icon">
+                    <img src="{% static 'images/icon_book_01.png' %}" alt="icon">
+                  </div>
+                  <div class="feature-item-desc">
+                    <p><strong>Free: </strong>
+                    Every WeLearn instructor offers a free educational course to students so that society achieves higher consciousness together.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="feature-item">
+                  <div class="feature-item-icon">
+                    <img src="{% static 'images/icon_atom_01.png' %}" alt="icon">
+                  </div>
+                  <div class="feature-item-desc">
+                    <p><strong>Adaptive: </strong>
+                    WeLearn adapts to your behavior and will suggest education that will help you reach your goals.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="feature-item">
+                  <div class="feature-item-icon">
+                    <img src="{% static 'images/icon_award_01.png' %}" alt="icon">
+                  </div>
+                  <div class="feature-item-desc">
+                    <p><strong>Reputable: </strong>
+                    WeLearn utilizes decentralized blockchain technology to ensure teachers’ courses are relevant and helpful</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="brand-wrapper">
+    <div class="container-fluid">
+      <div class="brand-item-list">
+        <div class="row justify-content-center align-items-center pl-xl-5">
+          <div class="col-xs-3 f-grow">
+            <img class="img-fluid" src="{% static 'images/img_brand_01.png' %}" alt="">
+          </div>
+          <div class="col-xs-3 f-grow">
+            <img class="img-fluid" src="{% static 'images/img_brand_02.png' %}" alt="">
+          </div>
+          <div class="col-xs-3 f-grow">
+            <img class="img-fluid" src="{% static 'images/img_brand_03.png' %}" alt="">
+          </div>
+          <div class="col-xs-3 f-grow">
+            <img class="img-fluid" src="{% static 'images/img_brand_04.png' %}" alt="">
+          </div>
+          <div class="col-xs-3 f-grow">
+            <img class="img-fluid" src="{% static 'images/img_brand_01.png' %}" alt="">
+          </div>
+          <div class="col-xs-3 f-grow">
+            <img class="img-fluid" src="{% static 'images/img_brand_02.png' %}" alt="">
+          </div>
+          <div class="col-xs-3 f-grow">
+            <img class="img-fluid" src="{% static 'images/img_brand_03.png' %}" alt="">
+          </div>
+          <div class="col-xs-3 f-grow">
+            <img class="img-fluid" src="{% static 'images/img_brand_04.png' %}" alt="">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Trending Section -->
+<section class="trending">
+  <div class="we-title d-flex justify-content-between align-items-center">
+    <h2>Trending</h2>
+    <a href="course-preview.html" class="see-all">See All</a>
+  </div>
+  <div class="carousel-x-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="carousel-x-courses-items owl-carousel owl-theme">
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_01.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- end card -->
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_02.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_03.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_04.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_05.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_01.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- end card -->
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_02.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<!-- High Tech Section -->
+<section class="high-tech">
+  <div class="we-title d-flex justify-content-between align-items-center">
+    <h2>High Tech</h2>
+    <a href="#" class="see-all">See All</a>
+  </div>
+  <div class="carousel-x-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="carousel-x-courses-items owl-carousel owl-theme">
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_06.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_07.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_08.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_09.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_10.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<!-- Personal Developer -->
+<section class="personal-developer">
+  <div class="we-title d-flex justify-content-between align-items-center">
+    <h2>Personal Developer</h2>
+    <a href="#" class="see-all">See All</a>
+  </div>
+  <div class="carousel-x-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="carousel-x-courses-items owl-carousel owl-theme">
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_01.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_02.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_03.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_04.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/img_thumb_05.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Featured Instructor -->
+<section class="featured-instructor">
+  <div class="we-title d-flex justify-content-between align-items-center">
+    <h2>Featured Instructor</h2>
+  </div>
+  <div class="instructor-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="instructor-container owl-carousel owl-theme">
+            <div class="instructor-item">
+              <div class="item-container">
+                <div class="row no-gutters">
+                  <div class="col-md-4 d-flex flex-column justify-content-between dark-gray-bg col-left">
+                    <div class="instructor-info">
+                      <div class="instructor-name">John Crestani</div>
+                      <div class="instructor-desc">
+                        <p>Make Money Doing Affiliate Marketing</p>
+                      </div>
+                      <a href="#" class="see-all">All Courses</a>
+                    </div>
+                    <div class="row no-gutters">
+                      <div class="col-md-6 light-gray-bg">
+                        <div class="block-student">
+                          <h4>356</h4>
+                          <span>Student</span>
+                        </div>
+                      </div>  
+                      <div class="col-md-6 light-gray-bg">
+                        <div class="block-courses">
+                          <h4>22</h4>
+                          <span>Courses</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-8 col-right">
+                    <div class="block-teacher-img">
+                      <img src="{% static 'images/img_feature_teacher_01.jpg' %}" alt="" class="img-responsive block-img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-item">
+                <div class="row block-courses-img">
+                  <div class="col-md-6">
+                    <div class="course-detail">
+                      <a href="#">
+                        <img src="{% static 'images/img_feature_teacher_article_01.jpg' %}" alt="">
+                        <span>Super Affiliate System</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="course-detail">
+                      <a href="course-preview.html">
+                        <img src="{% static 'images/img_feature_teacher_article_02.jpg' %}" alt="">
+                        <span>How to Build Your Own Online Business From Nothing...</span>
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="instructor-item">
+              <div class="item-container">
+                <div class="row no-gutters">
+                  <div class="col-md-4 d-flex flex-column justify-content-between dark-gray-bg col-left">
+                    <div class="instructor-info">
+                      <div class="instructor-name">John Crestani</div>
+                      <div class="instructor-desc">
+                        <p>Make Money Doing Affiliate Marketing</p>
+                      </div>
+                      <a href="#" class="see-all">All Courses</a>
+                    </div>
+                    <div class="row no-gutters">
+                      <div class="col-md-6 light-gray-bg">
+                        <div class="block-student">
+                          <h4>356</h4>
+                          <span>Student</span>
+                        </div>
+                      </div>  
+                      <div class="col-md-6 light-gray-bg">
+                        <div class="block-courses">
+                          <h4>22</h4>
+                          <span>Courses</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-8 col-right">
+                    <div class="block-teacher-img">
+                      <img src="{% static 'images/img_feature_teacher_01.jpg' %}" alt="" class="img-responsive block-img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-item">
+                <div class="row block-courses-img">
+                  <div class="col-md-6">
+                    <div class="course-detail">
+                      <a href="#">
+                        <img src="{% static 'images/img_feature_teacher_article_01.jpg' %}" alt="">
+                        <span>Super Affiliate System</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="course-detail">
+                      <a href="course-preview.html">
+                        <img src="{% static 'images/img_feature_teacher_article_02.jpg' %}" alt="">
+                        <span>How to Build Your Own Online Business From Nothing...</span>
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="instructor-item">
+              <div class="item-container">
+                <div class="row no-gutters">
+                  <div class="col-md-4 d-flex flex-column justify-content-between dark-gray-bg col-left">
+                    <div class="instructor-info">
+                      <div class="instructor-name">John Crestani</div>
+                      <div class="instructor-desc">
+                        <p>Make Money Doing Affiliate Marketing</p>
+                      </div>
+                      <a href="#" class="see-all">All Courses</a>
+                    </div>
+                    <div class="row no-gutters">
+                      <div class="col-md-6 light-gray-bg">
+                        <div class="block-student">
+                          <h4>356</h4>
+                          <span>Student</span>
+                        </div>
+                      </div>  
+                      <div class="col-md-6 light-gray-bg">
+                        <div class="block-courses">
+                          <h4>22</h4>
+                          <span>Courses</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-8 col-right">
+                    <div class="block-teacher-img">
+                      <img src="{% static 'images/img_feature_teacher_01.jpg' %}" alt="" class="img-responsive block-img">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-item">
+                <div class="row block-courses-img">
+                  <div class="col-md-6">
+                    <div class="course-detail">
+                      <a href="#">
+                        <img src="{% static 'images/img_feature_teacher_article_01.jpg' %}" alt="">
+                        <span>Super Affiliate System</span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="course-detail">
+                      <a href="course-preview.html">
+                        <img src="{% static 'images/img_feature_teacher_article_02.jpg' %}" alt="">
+                        <span>How to Build Your Own Online Business From Nothing...</span>
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Hire Instructor -->
+<section class="hire-instructor">
+  <div class="hire-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2 text-center">
+          <div class="hire-title">
+            <h1>Become an Instructor</h1>
+          </div>
+          <div class="hire-desc">
+            Share your knowledge. Make a difference. Build a following.
+          </div>
+          <div class="hire-btn">
+            <a href="{% url 'course-create' %}" class="btn">Start Teaching</a>
+          </div>
+          <div class="hire-img">
+            <img class="img-fluid" src="{% static 'images/img_instructors_01.png' %}" alt="img_instructors_01">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <div class='row'>
+  <div class='col-sm-12'>
+    <h1>Recommended</h1>
+  </div>
+  {% for item in rec_courses %}
+
+  <div class='col-sm-2'>
+    {% include 'courses/snippets/course_featured_display.html' with course=item %}
+  </div>
+  {% if forloop.counter|divisibleby:6 %}
+  {% endif %}
+  {% endfor %}
+</div>
+ -->
+
+  
+
+<div class='row'>
+  {% for item in qs %}
+  <div class='col-sm-4'>
+    {% include 'courses/snippets/course_thumbnail_display.html' with course=item %}
+  </div>
+{% cycle '' '' '</div><div class="row">' %}
+  {% endfor %}
+</div>
+
+
+{% endblock content %}
+
+
+

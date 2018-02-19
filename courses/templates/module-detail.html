@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>| WeLearn</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="assets/images/WeLearn_Round.png">
+	<!-- Normalize -->
+	<link rel="stylesheet" href="assets/css/normalize.css">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<!-- Theme Style -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Own Carousel -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+	<!-- WebUI Popover -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+	<!-- Hover -->
+	<link rel="stylesheet" href="assets/css/hover-min.css">
+	<!-- File Input -->
+	<link rel="stylesheet" href="assets/css/fileinput.min.css">
+</head>
+<body>
+	<!-- Header -->
+	<header>
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-md navbar-light fixed-top navbar-wrapper">
+			<a class="navbar-brand" href="index.html"><img src="assets/images/WeLearn_Horizontal.svg" alt="Logo"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="main-navbar">
+				<div class="menu-nav">
+					<ul>
+						<li class="btn-catalog"><span>Course Catalog</span>
+							<ul>
+								<li><a href="#">Hight-Tech</a></li>
+								<li><a href="#">Marketing</a>
+									<ul>
+										<li><a href="#">Digital Marketing</a></li>
+										<li><a href="#">Search Engine Optimisation</a></li>
+										<li><a href="#">Social Media Marketing</a></li>
+										<li><a href="#">Branding</a></li>
+										<li><a href="#">Advertising</a></li>
+										<li><a href="#">All Marketing</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Business</a></li>
+								<li><a href="#">Creative</a></li>
+								<li><a href="#">Seft-Development</a></li>
+								<li><a href="#">Eclectic</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<form class="d-flex my-2 my-lg-0 ml-3" style="width: 40%">
+					<input class="search-form simplebox form-control mr-sm-2" type="search" placeholder="Find a course..." aria-label="Search">
+					<a class="search-btn hvr-fade" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+				</form>
+				<div class="side-left d-flex flex-row ml-auto align-self-stretch">
+					<div class="create-btn btn-animate">
+						<a class="align-self-center" href="#">Create a Course</a>
+					</div>
+					<div class="profile-btn">
+						<ul>
+							<li>
+								<img src="assets/images/user_profile_login_01.jpg" alt="">
+								<a href="#">Scott</a>
+								<ul>
+									<li><a href="#">Wish List</a></li>
+									<li><a href="#">Setting</a></li>
+									<li><a href="#">Support</a></li>
+									<hr>
+									<li><a href="create-course.html">Create A Course</a></li>
+									<li><a href="#">Affiliates</a></li>
+									<li><a href="#">About Us</a></li>
+									<hr>
+									<li><a href="#">Log Out</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!--Login Modal -->
+		<div id="loginModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-body">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<div class="modal-wrapper text-center">
+							<h1>Start Learning</h1>
+							<a href="#" class="btn btn-general btn-blue"><i class="fa fa-facebook"></i><span>Login With FaceBook</span></a>
+							<a href="#" class="btn btn-general btn-red"><i class="fa fa-google"></i><span>Login With Google</span></a>
+							<a href="#" class="btn btn-general btn-light-blue"><i class="fa fa-linkedin"></i><span>Login With Linkedin</span></a>
+							<hr class="or-divider">
+							<form action="" class="text-left">
+								<div class="form-group">
+									<label class="font-weight-b" for="email">Email address:</label>
+									<input type="email" class="form-control">
+								</div>
+								<div class="form-group">
+									<label class="font-weight-b" for="pwd">Password:</label>
+									<input type="password" class="form-control">
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox"> Remember me</label>
+									<br>
+									<a href="#">Forgot password ?</a>
+								</div>
+								<button class="btn btn-login">Login</button>
+							</form>
+							<h3>Don't have an account? <a class="sign-up-link" href="#" data-toggle="modal" data-target="#signUpModal">Sign Up</a></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Sign Up Modal -->
+		<div id="signUpModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-body">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<div class="modal-wrapper text-center">
+							<h1>Challenge Yourself</h1>
+							<p>Share your knowledge. Make a difference. Build a following.</p>
+							<a href="#" class="btn btn-general btn-blue"><i class="fa fa-facebook"></i><span>Signup With FaceBook</span></a>
+							<a href="#" class="btn btn-general btn-red"><i class="fa fa-google"></i><span>Signup With Google</span></a>
+							<a href="#" class="btn btn-general btn-light-blue"><i class="fa fa-linkedin"></i><span>Signup With Linkedin</span></a>
+							<hr class="or-divider">
+							<h4>Signup With Email</h4>
+							<form action="" class="text-left">
+								<div class="form-group">
+									<label class="font-weight-b" for="email">Email address:</label>
+									<input type="email" class="form-control" id="email">
+								</div>
+								<div class="form-group">
+									<label class="font-weight-b" for="pwd">Password:</label>
+									<input type="password" class="form-control" id="pwd">
+								</div>
+								<button class="btn btn-login">Signup</button>
+							</form>
+							<h3>Already have an account? <a class="login-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="wl-main-content">
+		<div class="module-wrapper">
+			<!-- Module Navigation -->
+			<div class="module-nav">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="module-nav-container">
+								<div class="module-prev">
+									<a href="#"><i class="fa fa-angle-left"></i> Previous Module</a>
+								</div>
+								<div class="module-center">
+									<strong>The Complete Metadata Bootcamp</strong><span>&nbsp;&nbsp;|&nbsp;&nbsp;Module 3 of 10</span>
+								</div>
+								<div class="module-next">
+									<a href="#">Next Module <i class="fa fa-angle-right"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Module Title -->
+			<div class="module-title">
+				<div class="container-fluid">
+					<div class="row justify-content-center">
+						<div class="col-sm-12 col-md-12 col-xl-9">
+							<h1>Understanding Meta Titles, <br class="show-lg show-md">Descriptions and Keyword Research</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Module Video -->
+			<div class="module-video">
+				<div class="container-fluid">
+					<div class="row justify-content-center">
+						<div class="col-sm-12 col-md-8 col-xl-9 pr-md-0 pr-xl-3">
+							<div class="module-img">
+								<img class="img-fluid" src="assets/images/img_module_01.jpg" alt="Modul Video">
+								<span class="play-toggle"><i class="fa fa-play" aria-hidden="true"></i></span>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-4 col-xl-9 pl-md-0 pl-xl-3">
+							<div class="module-img-detail h-100">
+								<div class="row">
+									<div class="col-md-12 col-xl-3">
+										<h4>Updates</h4>
+									</div>
+									<div class="col-md-12 col-xl-9">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									</div>
+								</div>
+							</div>
+						</div>						
+					</div>
+				</div>
+			</div>
+			<!-- Module Description -->
+			<div class="module-description">
+				<div class="container-fluid">
+					<div class="row justify-content-center">
+						<div class="col-sm-12 col-md-12 col-xl-9">
+							<h2>Description</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Module Resources -->
+			<div class="module-resources">
+				<div class="container-fluid">
+					<div class="row justify-content-center">
+						<div class="col-sm-12 col-md-12 col-xl-9">
+							<h2>Resources</h2>
+							<ul class="pl-3">
+								<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</li>
+								<li>Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</li>
+								<li>Consectetur adipiscing elit, sed do eiusmod tempor.</li>
+								<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Module Navigation Block -->
+			<div class="module-nav-block">
+				<div class="container-fluid">
+					<div class="row justify-content-center">
+						<div class="col-sm-12 col-xl-9">
+							<div class="row">
+								<div class="col-md-6">
+									<h2>Previous Module</h2>
+									<div class="prev-item">
+										<h4>Module 1</h4>
+										<h2>Excel Crash Course - Formatting &amp; Other Tips</h2>
+										<a href="#" class="btn btn-02">Revist Module</a>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<h2>Next Module</h2>
+									<div class="next-item">
+										<h4>Module 3</h4>
+										<h2>Excel Crash Course - Formatting &amp; Other Tips</h2>
+										<a href="#" class="btn btn-03">Get Started</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="footer-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2 offset-md-2 text-center">
+						<div class="footer-title">
+							<span>Company</span>
+							<ul>
+								<li><a href="#">About</a></li>
+								<li><a href="#">Press</a></li>
+								<li><a href="#">Blog</a></li>
+								<li><a href="#">Testiominals</a></li>
+								<li><a href="#">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-4 text-center">
+						<a href="#">
+							<img src="assets/images/footer_logo.png" alt="">
+						</a>
+						<ul class="icon-list">
+							<li><a href="#"><i class="fa fa-facebook icon-bg-dark"></i></a></li>
+							<li><a href="#"><i class="fa fa-twitter icon-bg-light"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram icon-bg-dark"></i></a></li>
+							<li><a href="#"><i class="fa fa-youtube-play icon-bg-light"></i></a></li>
+						</ul>
+					</div>	
+					<div class="col-md-2 text-center">
+						<div class="footer-title">
+							<span>Policies</span>
+							<ul>
+								<li><a href="#">Privacy</a></li>
+								<li><a href="#">Terms</a></li>
+								<li><a href="#">Pricing</a></li>
+								<li><a href="#">Intellectual Property</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright text-center">
+			<span>© Pendragon Labs LLC. 2017</span>
+		</div>
+	</footer>
+	
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+	<script type="text/javascript" src="assets/js/readmore.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.steps.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="assets/js/addel.jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/fileinput.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			 
+		});
+	</script>
+</body>
+</html>

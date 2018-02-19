@@ -1,0 +1,1456 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Course Head 1 Section -->
+<section class="course-head-1">
+  <div class="course-head-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="course-head-img">
+            <img class="img-responsive" src="{{ course.image.url }}" alt="{{ course.title }}">
+            {% if course.video != None and course.video != '' %}
+              <span class="play-toggle"><i class="fa fa-play"></i></span>
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-md-6 pl-md-0">
+          <div class="course-name mb-2"><a>{{ course.headline }}</a></div>
+          <div class="course-title">{{ course.title }}</div>
+          <div class="course-desc"><p>{{ course.description }}</p></div>
+          <ul class="rate-block list-inline">
+            <li>
+              <ul class="list-inline">
+                <li><i class="fa fa-star font-orange" aria-hidden="true"></i></li>
+                <li><i class="fa fa-star font-orange" aria-hidden="true"></i></li>
+                <li><i class="fa fa-star font-orange" aria-hidden="true"></i></li>
+                <li><i class="fa fa-star-half-o font-orange" aria-hidden="true"></i></li>
+                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+              </ul>
+            </li>
+            <li><span class="point-rate"><em class="font-white">3.2</em>(15 ratings)</span></li>
+          </ul>
+          <ul class="author-block list-inline">
+            <li>
+              <ul class="list-inline">
+                <li>Created by <a href="#" class="link font-white">John Crestani</a></li>
+                <li>{{ course.students.count }} Students</li>
+                <li>{{ course.level }} Level</li>
+              </ul>
+            </li>
+          </ul>
+        </div>  
+        <div class="col-md-3">
+          <span class="course-tag">Tags: </span>
+          <ul class="course-tag-list">
+            {% for tag in course.tags.all %}
+            <li><a href="#">{{ tag }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Course Head 2 Section -->
+<section class="course-head-2">
+  <div class="course-head-2-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2 col-xl-3 col-sm-2 border-right p-3">
+          <h3><span class="course-price">{{ course.pricing }}</span></h3>
+        </div>
+        <div class="col-md-6 col-xl-6 p-3 d-flex align-items-center">
+          <a class="save-whishlist" href="#"><i class="fa fa-heart-o" aria-hidden="true"></i><small>Save to wishlist</small></a>
+        </div>
+        <div class="col-md-4 col-xl-3 p-3">
+          <a href="#" class="btn btn-02 mr-2">Preview Course</a>
+          <a href="#" class="btn btn-03">Enroll</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Course Goal Section -->
+<section class="course-goal">
+  <div class="container-fluid">
+    <div class="course-wrapper">
+      <div class="row">
+        <div class="col-sm-12 col-md-10 offset-md-1">
+          <div class="course-preview-title">Course Goals</div>
+          <div class="course-content">
+            <ul>
+              {% for key, value in course.goals.items %}
+              <li><p><span class="glyphicon glyphicon-certificate"></span> {{ value }}</p><li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+<!-- Course Benefits Section -->
+<section class="course-benefits">
+  <div class="container-fluid">
+    <div class="course-wrapper">
+      <div class="row">
+        <div class="col-sm-12 col-md-10 offset-md-1">
+          <div class="course-preview-title">Course Benefits</div>
+          <div class="row">
+            <div class="col-md-6">
+              {% for key, value in course.benefits.items %}
+                <div class="course-content">
+                  <p>{{ value }}</p>
+                </div>
+                {% if forloop.counter|divisibleby:"3" and not forloop.last %}
+                  </div><div class="col-md-6">
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Course Description Section -->
+<section class="course-description">
+  <div class="container-fluid">
+    <div class="course-wrapper">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="course-preview-title">Course Description</div>
+          <div class="read-content">
+            {{ course.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Module Preview Section -->
+<section class="course-module">
+  <div class="container-fluid">
+    <div class="course-wrapper">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="course-module-head d-flex justify-content-between">
+            <div class="course-preview-title">Module Preview</div>
+            <div class="course-count pt-3">10 Modules</div>
+          </div>
+          <div class="course-module-content" style="height: 1300px">
+            <ul class="accordion-block">
+              <li>
+                <div class="accordion-head">
+                  <div class="container">
+                    <div class="row row-head reverse">
+                      <div class="col-sm-1 col-label">
+                        <span class="toggle-label"></span>
+                      </div>
+                      <div class="col-sm-8 col-md-9 col-title">
+                        <div class="title-block">
+                          <h3 class="font-white">Introduction to this Course</h3>
+                          <span>Learn about why metadata is useful, and who this course will help most.</span>
+                        </div>
+                      </div>
+                      <div class="col-sm-3 col-md-2 col-link">
+                        <a href="#"><small>VIDEO</small></a>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+              <li>
+                <div class="accordion-head">
+                  <div class="container">
+                    <div class="row row-head reverse">
+                      
+                      <div class="col-sm-1 col-label">
+                        <span class="toggle-label"></span>
+                      </div>
+                      <div class="col-sm-8 col-md-9 col-title">
+                        <div class="title-block">
+                          <h3 class="font-white">Introduction to this Course</h3>
+                          <span>Learn about why metadata is useful, and who this course will help most.</span>
+                        </div>
+                      </div>
+                      <div class="col-sm-3 col-md-2 col-link">
+                        <a href="#"><small>Donwnload</small></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+              <li>
+                <div class="accordion-head">
+                  <div class="container">
+                    <div class="row row-head reverse">
+                      
+                      <div class="col-sm-1 col-label">
+                        <span class="toggle-label"></span>
+                      </div>
+                      <div class="col-sm-8 col-md-9 col-title">
+                        <div class="title-block">
+                          <h3 class="font-white">Introduction to this Course</h3>
+                          <span>Learn about why metadata is useful, and who this course will help most.</span>
+                        </div>
+                      </div>
+                      <div class="col-sm-3 col-md-2 col-link">
+                        <a href="#"><small>Donwnload</small></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+              <li>
+                <div class="accordion-head">
+                  <div class="container">
+                    <div class="row row-head reverse">
+                      
+                      <div class="col-sm-1 col-label">
+                        <span class="toggle-label"></span>
+                      </div>
+                      <div class="col-sm-8 col-md-9 col-title">
+                        <div class="title-block">
+                          <h3 class="font-white">Introduction to this Course</h3>
+                          <span>Learn about why metadata is useful, and who this course will help most.</span>
+                        </div>
+                      </div>
+                      <div class="col-sm-3 col-md-2 col-link">
+                        <a href="#"><small>Donwnload</small></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+              <li>
+                <div class="accordion-head">
+                  <div class="container">
+                    <div class="row row-head reverse">
+                      <div class="col-sm-1 col-label">
+                        <span class="toggle-label"></span>
+                      </div>
+                      <div class="col-sm-8 col-md-9 col-title">
+                        <div class="title-block">
+                          <h3 class="font-white">Introduction to this Course</h3>
+                          <span>Learn about why metadata is useful, and who this course will help most.</span>
+                        </div>
+                      </div>
+                      <div class="col-sm-3 col-md-2 col-link">
+                        <a href="#"><small>VIDEO</small></a>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+              <li>
+                <div class="accordion-head">
+                  <div class="container">
+                    <div class="row row-head reverse">
+                      <div class="col-sm-1 col-label">
+                        <span class="toggle-label"></span>
+                      </div>
+                      <div class="col-sm-8 col-md-9 col-title">
+                        <div class="title-block">
+                          <h3 class="font-white">Introduction to this Course</h3>
+                          <span>Learn about why metadata is useful, and who this course will help most.</span>
+                        </div>
+                      </div>
+                      <div class="col-sm-3 col-md-2 col-link">
+                        <a href="#"><small>VIDEO</small></a>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+              <li>
+                <div class="accordion-head">
+                  <div class="container">
+                    <div class="row row-head reverse">
+                      <div class="col-sm-1 col-label">
+                        <span class="toggle-label"></span>
+                      </div>
+                      <div class="col-sm-8 col-md-9 col-title">
+                        <div class="title-block">
+                          <h3 class="font-white">Introduction to this Course</h3>
+                          <span>Learn about why metadata is useful, and who this course will help most.</span>
+                        </div>
+                      </div>
+                      <div class="col-sm-3 col-md-2 col-link">
+                        <a href="#"><small>VIDEO</small></a>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+              <li>
+                <div class="accordion-head">
+                  <div class="container">
+                    <div class="row row-head reverse">
+                      <div class="col-sm-1 col-label">
+                        <span class="toggle-label"></span>
+                      </div>
+                      <div class="col-sm-8 col-md-9 col-title">
+                        <div class="title-block">
+                          <h3 class="font-white">Introduction to this Course</h3>
+                          <span>Learn about why metadata is useful, and who this course will help most.</span>
+                        </div>
+                      </div>
+                      <div class="col-sm-3 col-md-2 col-link">
+                        <a href="#"><small>VIDEO</small></a>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Student Preview Section -->
+<!-- <section class="student-preview">
+  <div class="container-fluid">
+    <div class="course-wrapper">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="course-preview-title">Student Reviews</div>
+          <div class="rating-summary">
+            <div class="row">
+              <div class="col-average col-xs-12 col-sm-3">
+                <div class="rate-box">
+                  <div class="rate-content">
+                    <p>Average Rating</p>
+                    <span class="rate">3.2</span>
+                  </div>
+                  <div class="rate-stars">
+                    <ul class="list-inline">
+                      <li><i class="fa fa-star fa-lg" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-half-o fa-lg" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-rating col-sm-9">
+                <div class="row">
+                  <div class="col-bars col-xs-7 col-sm-8">
+                    <div class="progress">
+                      <span style="width: 45%;"></span>
+                    </div>
+                  </div>
+                  <div class="col-stars col-xs-5 col-sm-4">
+                    <ul class="list-inline">
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                    </ul>
+                    <span>32%</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-bars col-xs-7 col-sm-8">
+                    <div class="progress">
+                      <span style="width: 70%;"></span>
+                    </div>
+                  </div>
+                  <div class="col-stars col-xs-5 col-sm-4">
+                    <ul class="list-inline">
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-half-o fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                    </ul>
+                    <span>70%</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-bars col-xs-7 col-sm-8">
+                    <div class="progress">
+                      <span style="width: 7%;"></span>
+                    </div>
+                  </div>
+                  <div class="col-stars col-xs-5 col-sm-4">
+                    <ul class="list-inline">
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-half-o fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                    </ul>
+                    <span>7%</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-bars col-xs-7 col-sm-8">
+                    <div class="progress">
+                      <span style="width: 2%;"></span>
+                    </div>
+                  </div>
+                  <div class="col-stars col-xs-5 col-sm-4">
+                    <ul class="list-inline">
+                      <li><i class="fa fa-star-half-o fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                    </ul>
+                    <span>2%</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-bars col-xs-7 col-sm-8">
+                    <div class="progress">
+                      <span style="width: 0%;"></span>
+                    </div>
+                  </div>
+                  <div class="col-stars col-xs-5 col-sm-4">
+                    <ul class="list-inline">
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                    </ul>
+                    <span>0%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-block">
+            <div class="course-preview-title">Reviews</div>
+            <div class="review-list">
+              <div class="review-item">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="author">
+                      <figure>
+                        <img src="{% static 'images/img_user_01.jpg' %}" alt="">
+                      </figure>
+                      <p><a href="#"><strong>Benjamin Bush</strong></a></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="review-info">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <ul class="star-list list-inline">
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="review-item">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="author">
+                      <figure>
+                        <img src="{% static 'images/img_user_01.jpg' %}" alt="">
+                      </figure>
+                      <p><a href="#"><strong>Benjamin Bush</strong></a></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="review-info">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <ul class="star-list list-inline">
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="review-item">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="author">
+                      <figure>
+                        <img src="{% static 'images/img_user_01.jpg' %}" alt="">
+                      </figure>
+                      <p><a href="#"><strong>Benjamin Bush</strong></a></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="review-info">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <ul class="star-list list-inline">
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="review-item">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="author">
+                      <figure>
+                        <img src="{% static 'images/img_user_01.jpg' %}" alt="">
+                      </figure>
+                      <p><a href="#"><strong>Benjamin Bush</strong></a></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="review-info">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <ul class="star-list list-inline">
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</section> -->
+<!-- Also Like Section -->
+<!-- <section class="also-like">
+  <div class="we-title d-flex justify-content-between align-items-center">
+    <h2>You might also enjoy...</h2>
+  </div>
+  <div class="carousel-x-wrapper pb-5 ">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="carousel-x-courses-items owl-carousel owl-theme">
+            <div class="carousel-x-item">
+              <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="{% static 'images/img_thumb_01.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="{% static 'images/img_thumb_02.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="{% static 'images/img_thumb_03.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="{% static 'images/img_thumb_04.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-x-item">
+              <div class="card" style="width: 20rem;">
+                <img class="card-img-top" src="{% static 'images/img_thumb_05.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <a href="course-preview.html" class="card-title">The Complete Metadata Bootcamp</a>
+                  <p class="card-text">Create high ranking websites that offer a real return on investment.</p>
+                  <a href="#" class="card-author">Tim Stevens </a><span> | 112 Students</span>
+                  <div class="card-bot d-flex flex-row justify-content-between align-items-center">
+                    <div class="card-course-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="card-right">
+                      <div class="rating">
+                        <span>236</span>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="webui-popover-content">
+                <div class="course-pop-wrapper">
+                  <div class="course-pop-inner">
+                    <div class="course-pop-name">
+                      <a href="#">Web Developer</a>
+                    </div>
+                    <div class="course-pop-title">
+                      <a href="course-preview.html">The Complete Metadata Bootcamp</a>
+                    </div>
+                    <div class="course-pop-desc">
+                      <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+                      <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                        <li>Lorem ipsum dolor</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                      </ul>
+                    </div>
+                    <div class="course-pop-author">
+                      <a href="#">Tim Stevens </a><span> | 112 Students</span>
+                    </div>
+                    <hr>
+                    <div class="pop-btn-group text-center">
+                      <a class="btn-preview" href="#">Preview</a>
+                      <a class="btn-enroll" href="#">Enroll</a>
+                    </div>
+                    <div class="course-pop-whishlist text-center">
+                      <a href="#"><i class="fa fa-heart"></i>  Save to Whistlist</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- About Instructor Section -->
+<section class="about-instructor">
+  <div class="container-fluid">
+    <div class="course-wrapper pb-0">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="course-preview-title">About The Instructor</div>
+          <div class="row">
+            <div class="col-sm-6">
+              <figure class="m-0"><img class="block" src="{% static 'images/img_teacher_01.jpg' %}" alt="Teacher IMG"></figure>
+              <ul class="social-link list-unstyled">
+                <li><a href="#"><i class="fa fa-lg fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-lg fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-lg fa-pinterest-p" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-lg fa-google" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-lg fa-linkedin" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <div class="course-instructor-info">
+                <div class="info-title">
+                  <h3>John Crestani</h3>
+                  <h4>Marketing Instructor</h4>
+                </div>
+                <p>Since(involuntarily) leaving his crushy job in the corporate world, in just a couple of years he’s gone on to build an empire in the affiliate marketing space. And now he’s taken it upon himself to teach a handful of aspiring marketers how they too can get a piece of the affiliate marketing action.</p>
+                <p><a href="#">View Profile</a></p>
+              </div>
+            </div>
+          </div>
+<!--           <div class="school-carousel-wrapper owl-carousel owl-theme">
+            <div class="school-carousel-item">
+              <figure>
+                <img class="img-fluid" src="{% static 'images/img_school_01.jpg' %}" alt="">
+                <figcaption>B.A. Mechanical Engineering, Harvard University</figcaption>
+              </figure>
+            </div>
+            <div class="school-carousel-item">
+              <figure>
+                <img class="img-fluid" src="{% static 'images/img_school_02.jpg' %}" alt="">
+                <figcaption>Law Degree Princeton University</figcaption>
+              </figure>
+            </div>
+            <div class="school-carousel-item">
+              <figure>
+                <img class="img-fluid" src="{% static 'images/img_school_03.jpg' %}" alt="">
+                <figcaption>MBA in Engineering, Yale</figcaption>
+              </figure>
+            </div>
+            <div class="school-carousel-item">
+              <figure>
+                <img class="img-fluid" src="{% static 'images/img_school_04.jpg' %}" alt="">
+                <figcaption>Member, The Planetary Society</figcaption>
+              </figure>
+            </div>
+            <div class="school-carousel-item">
+              <figure>
+                <img class="img-fluid" src="{% static 'images/img_school_01.jpg' %}" alt="">
+                <figcaption>Member, The Planetary Society</figcaption>
+              </figure>
+            </div>
+            <div class="school-carousel-item">
+              <figure>
+                <img class="img-fluid" src="{% static 'images/img_school_02.jpg' %}" alt="">
+                <figcaption>MBA in Engineering, Yale</figcaption>
+              </figure>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Other Courses Section -->
+<!-- <section class="other-courses">
+  <div class="container-fluid">
+    <div class="course-wrapper pb-0">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="course-preview-title">Other Courses by this Instructor</div><hr>
+          <div class="row">
+            <div class="col-md-6">
+              <a class="other-course-link d-flex align-items-center" href="#">
+                <div class="instructor-img">
+                  <img class="img-fluid" src="{% static 'images/img_thumb_01.jpg' %}" alt="">
+                </div>
+                <div class="instructor-course">
+                  <span>The Complete Metadata Bootcamp</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6">
+              <a class="other-course-link d-flex align-items-center" href="#">
+                <div class="instructor-img">
+                  <img class="img-fluid" src="{% static 'images/img_thumb_02.jpg' %}" alt="">
+                </div>
+                <div class="instructor-course">
+                  <span>The Complete Metadata Bootcamp</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6">
+              <a class="other-course-link d-flex align-items-center" href="#">
+                <div class="instructor-img">
+                  <img class="img-fluid" src="{% static 'images/img_thumb_03.jpg' %}" alt="">
+                </div>
+                <div class="instructor-course">
+                  <span>The Complete Metadata Bootcamp</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6">
+              <a class="other-course-link d-flex align-items-center" href="#">
+                <div class="instructor-img">
+                  <img class="img-fluid" src="{% static 'images/img_thumb_04.jpg' %}" alt="">
+                </div>
+                <div class="instructor-course">
+                  <span>The Complete Metadata Bootcamp</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- Instructor Rating Section -->
+<!-- <section class="instructor-rating">
+  <div class="container-fluid">
+    <div class="course-wrapper pb-0">
+      <div class="col-md-10 offset-md-1">
+        <div class="course-preview-title">Instructor Rating</div>
+        <hr>
+        <div class="rating-summary">
+          <div class="row">
+            <div class="col-rating col-sm-12">
+              <div class="row">
+                <div class="col-label col-xs-10 col-sm-4 col-md-3">
+                  <span><strong>Reviews</strong></span>
+                </div>
+                <div class="col-bars col-xs-12 col-sm-6 col-md-7 col-lg-8">
+                  <div class="progress">
+                    <span style="width: 45%;"></span>
+                  </div>
+                </div>
+                <div class="col-stars col-xs-2 col-lg-1">
+                  <span>4/10</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-label col-xs-10 col-sm-4 col-md-3">
+                  <span><strong>Engagement</strong></span>
+                </div>
+                <div class="col-bars col-xs-12 col-sm-6 col-md-7 col-lg-8">
+                  <div class="progress">
+                    <span style="width: 65%;"></span>
+                  </div>
+                </div>
+                <div class="col-stars col-xs-2 col-lg-1">
+                  <span>7/10</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-label col-xs-10 col-sm-4 col-md-3">
+                  <span><strong>Reviews</strong></span>
+                </div>
+                <div class="col-bars col-xs-12 col-sm-6 col-md-7 col-lg-8">
+                  <div class="progress">
+                    <span style="width: 15%;"></span>
+                  </div>
+                </div>
+                <div class="col-stars col-xs-2 col-lg-1">
+                  <span>3/10</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-label col-xs-10 col-sm-4 col-md-3">
+                  <span><strong>Profile Completedness</strong></span>
+                </div>
+                <div class="col-bars col-xs-12 col-sm-6 col-md-7 col-lg-8">
+                  <div class="progress">
+                    <span style="width: 5%;"></span>
+                  </div>
+                </div>
+                <div class="col-stars col-xs-2 col-lg-1">
+                  <span>2/10</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-label col-xs-10 col-sm-4 col-md-3">
+                  <span><strong>Popularity</strong></span>
+                </div>
+                <div class="col-bars col-xs-12 col-sm-6 col-md-7 col-lg-8">
+                  <div class="progress">
+                    <span style="width: 1%;"></span>
+                  </div>
+                </div>
+                <div class="col-stars col-xs-2 col-lg-1">
+                  <span>1/10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- Instructor Reviews Section -->
+<!-- <section class="instructor-reviews">
+  <div class="container-fluid">
+    <div class="course-wrapper pb-0">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="review-block">
+            <div class="course-preview-title">Instructor Reviews</div>
+            <div class="review-list">
+              <div class="review-item">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="author">
+                      <figure>
+                        <img src="{% static 'images/img_user_01.jpg' %}" alt="">
+                      </figure>
+                      <p><a href="#"><strong>Benjamin Bush</strong></a></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="review-info">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <ul class="star-list list-inline">
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="review-item">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="author">
+                      <figure>
+                        <img src="{% static 'images/img_user_01.jpg' %}" alt="">
+                      </figure>
+                      <p><a href="#"><strong>Benjamin Bush</strong></a></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="review-info">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <ul class="star-list list-inline">
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="review-item">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="author">
+                      <figure>
+                        <img src="{% static 'images/img_user_01.jpg' %}" alt="">
+                      </figure>
+                      <p><a href="#"><strong>Benjamin Bush</strong></a></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="review-info">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <ul class="star-list list-inline">
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="review-item">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="author">
+                      <figure>
+                        <img src="{% static 'images/img_user_01.jpg' %}" alt="">
+                      </figure>
+                      <p><a href="#"><strong>Benjamin Bush</strong></a></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="review-info">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <ul class="star-list list-inline">
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star fa-lg font-orange" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-star-o fa-lg" aria-hidden="true"></i></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- Recommendation Section -->
+<!-- <section class="course-recommendation">
+  <div class="container-fluid">
+    <div class="course-wrapper pb-0">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="course-preview-title">Recommendation</div>
+          <hr>
+        </div>
+      </div>
+      <div class="row row-content">
+        <div class="col-sm-12 col-md-10 offset-md-1">
+          <div class="row row-block">
+            <div class="col-sm-11">
+              <div class="rating-summary">
+                <div class="row">
+                  <div class="col-rating col-sm-12">
+                    <div class="row top-sm">
+                      <div class="col-label col-xs-12 col-sm-3">
+                        <span><strong>Course</strong></span>
+                      </div>
+                      <div class="col-bars col-xs-8 col-sm-7">
+                        <div class="progress">
+                          <span style="width: 45%;"></span>
+                        </div>
+                      </div>
+                      <div class="col-stars col-xs-4 col-sm-2">
+                        <span>42%</span>
+                        <span class="img-like"><img src="{% static 'images/icon_like_01.png' %}" alt=""></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-bars col-xs-12 offset-sm-3 col-sm-7">
+                        <p>This course is more popular than most courses on the platform, and students’ watch much more of this course than average.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row-block">
+            <div class="col-sm-11">
+              <div class="rating-summary">
+                <div class="row">
+                  <div class="col-rating col-sm-12">
+                    <div class="row top-sm">
+                      <div class="col-label col-xs-12 col-sm-3">
+                        <span><strong>Teacher</strong></span>
+                      </div>
+                      <div class="col-bars col-xs-10 col-sm-7">
+                        <div class="progress">
+                          <a href="#" class="btn-linkedin">
+                            <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+                            <span>Login With Linkedin</span>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-stars col-xs-2 col-sm-2">
+                        <span class="img-ask"><img src="{% static 'images/icon_question_01.png' %}" alt=""></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-bars col-xs-12 offset-sm-3 col-sm-7">
+                        <p>Login with Linkedin to see if this teacher is recommended based on your professional interests and acquaintences.</p>
+                        <p>Or simply <a href="#"><strong>Complete your profile</strong></a>.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row-block">
+            <div class="col-sm-11">
+              <div class="rating-summary">
+                <div class="row">
+                  <div class="col-rating col-sm-12">
+                    <div class="row top-sm">
+                      <div class="col-label col-xs-12 col-sm-3">
+                        <span><strong>Teacher</strong></span>
+                      </div>
+                      <div class="col-bars col-xs-10 col-sm-7">
+                        <div class="progress">
+                          <a href="#" class="btn-twitter">
+                            <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                            <span>Login With Twitter</span>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-stars col-xs-2 col-sm-2">
+                        <span class="img-ask"><img src="{% static 'images/icon_question_01.png' %}" alt=""></span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-bars col-xs-12 offset-sm-3 col-sm-7">
+                        <p>Login with Twitter to see if this course matches your social community.</p>
+                        <p>Or simply <a href="#"><strong>Complete your profile</strong></a>.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- Course Comparison Section -->
+<section class="course-comparison">
+  <div class="container-fluid">
+    <div class="course-wrapper pb-0">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="course-preview-title">Course Comparison</div>
+          <hr>
+          <div class="table-block-01">
+            <table>
+              <thead>
+                <tr>
+                  <th class="blank-cell"></th>
+                  <th>Course</th>
+                  <th>Teacher</th>
+                  <th>Community</th>
+                  <th>Overall</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Metadata Course</th>
+                  <td data-th="Course">4/5</td>
+                  <td data-th="Teacher"><span class="blur-cell">4/5</span></td>
+                  <td data-th="Community"><span class="blur-cell">4/5</span></td>
+                  <td data-th="Overall"><img src="{% static 'images/icon_like_01.png' %}" alt=""></td>
+                </tr>
+                <tr>
+                  <th>Web design course</th>
+                  <td data-th="Course">2/5</td>
+                  <td data-th="Teacher"><span class="blur-cell">4/5</span></td>
+                  <td data-th="Community"><span class="blur-cell">4/5</span></td>
+                  <td data-th="Overall"><img src="{% static 'images/icon_question_01.png' %}" alt=""></td>
+                </tr>
+                <tr>
+                  <th>Amazon FBA course</th>
+                  <td data-th="Course">4/5</td>
+                  <td data-th="Teacher"><span class="blur-cell">4/5</span></td>
+                  <td data-th="Community"><span class="blur-cell">4/5</span></td>
+                  <td data-th="Overall">-</td>
+                </tr>
+                <tr>
+                  <th>Coding Bootcamp</th>
+                  <td data-th="Course">2/5</td>
+                  <td data-th="Teacher"><span class="blur-cell">4/5</span></td>
+                  <td data-th="Community"><span class="blur-cell">4/5</span></td>
+                  <td data-th="Overall"><img src="{% static 'images/icon_question_01.png' %}" alt=""></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <th>Recommendation</th>
+                <td data-th="Course">Yes</td>
+                <td data-th="Teacher">
+                  <a href="#" class="btn btn-linkedin">LOGIN WITH LINKEDIN TO ACTVATE</a>
+                </td>
+                <td data-th="Community">
+                  <a href="#" class="btn btn-twitter">LOGIN WITH TWITTER TO ACTVATE</a>
+                </td>
+                <td data-th="Overall">
+                  <a href="#" class="btn btn-email">CONNECT EMAIL</a>
+                </td>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Course Enroll Section -->
+<section class="course-enroll">
+  <div class="container-fluid">
+    <div class="course-wrapper pb-0">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="box-01">
+            <div class="row justify-content-center">
+              <div class="col-md-11 col-xs-11 text-left">
+                <div class="row align-items-center">
+                  <div class="col-content col-sm-8">
+                    <h4>ENROLL IN</h4>
+                    <h3>Amazon FBF For Beginners</h3>
+                    <p>Join 283 other students today.</p>
+                  </div>
+                  <div class="col-button col-sm-4">
+                    <a href="#" class="btn btn-03">Enroll Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Other Courses Section -->
+<section class="other-courses">
+  <div class="container-fluid">
+    <div class="course-wrapper">
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="course-preview-title">Recently Viewed Courses and Featured Recommendations</div><hr>
+          <div class="row">
+            <div class="col-md-6">
+              <a class="other-course-link d-flex align-items-center" href="#">
+                <div class="instructor-img">
+                  <img class="img-fluid" src="{% static 'images/img_thumb_01.jpg' %}" alt="">
+                </div>
+                <div class="instructor-course">
+                  <span>The Complete Metadata Bootcamp</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6">
+              <a class="other-course-link d-flex align-items-center" href="#">
+                <div class="instructor-img">
+                  <img class="img-fluid" src="{% static 'images/img_thumb_02.jpg' %}" alt="">
+                </div>
+                <div class="instructor-course">
+                  <span>The Complete Metadata Bootcamp</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6">
+              <a class="other-course-link d-flex align-items-center" href="#">
+                <div class="instructor-img">
+                  <img class="img-fluid" src="{% static 'images/img_thumb_03.jpg' %}" alt="">
+                </div>
+                <div class="instructor-course">
+                  <span>The Complete Metadata Bootcamp</span>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6">
+              <a class="other-course-link d-flex align-items-center" href="#">
+                <div class="instructor-img">
+                  <img class="img-fluid" src="{% static 'images/img_thumb_04.jpg' %}" alt="">
+                </div>
+                <div class="instructor-course">
+                  <span>The Complete Metadata Bootcamp</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

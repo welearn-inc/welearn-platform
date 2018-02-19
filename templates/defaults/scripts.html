@@ -1,0 +1,101 @@
+{% load static %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.webui-popover.min.js' %}"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".carousel-x-courses-items").owlCarousel({
+      items:4,
+      margin:10,
+      nav:true,
+      dots:false,
+      smartSpeed:500,
+      responsive: {
+        1366 : {
+          items:4,
+        },
+        1024 : {
+          items:3,
+        },
+        768 : {
+          items:2,
+          margin:1,
+        }
+      },
+      navText:["<img src={% static 'images/slider_prev_01.jpg' %}>","<img src={% static 'images/slider_next_01.jpg' %}>"],
+    });
+//Instructor Carousel
+$('.instructor-container').owlCarousel({
+  items:1,
+  autoWidth:true,
+  margin:20,
+  dots:false,
+  smartSpeed:700,
+  nav:true,
+  responsive: {
+    768 : {
+      items:1,
+    }
+  },
+  navText:["<img src={% static 'images/slider_prev_01.jpg' %}>","<img src={% static 'images/slider_next_01.jpg' %}>"],
+});
+//Last carousel item popover to left
+$(".owl-carousel").on('initialized.owl.carousel changed.owl.carousel refreshed.owl.carousel', function (e) {
+  if (!e.namespace) return;
+  var carousel = e.relatedTarget,
+  current = carousel.current();
+  if (current === carousel.maximum()) {
+    var lastcard = $(this).find('.carousel-x-item').last();
+    lastcard.find('.card').attr('data-placement','left');
+  }
+});
+//Show 1 modal
+$('.sign-up-link').click(function(){
+  $('#loginModal').removeClass("fade").modal("hide");
+});
+$('.login-link').click(function(){
+  $('#signUpModal').removeClass("fade").modal("hide");
+});
+//WebUI Popover
+$('.card').webuiPopover({
+  placement:'right',
+  trigger:'hover',
+  animation:'pop',
+  width:360,
+});
+});
+function ajax_authenticate()
+{
+  var url = 'login';
+  $.ajax( url, {
+    data: {
+      'username': $("#email").val(),
+      'password': $("#login_password").val(),
+      'csrfmiddlewaretoken': '{{ csrf_token }}'
+    },
+    type: 'post',
+    success: function(json_result) {
+      // success code execution here
+      if (json_result.status == "success")
+      {
+      // Hide & close the current popup modal.
+      $('#login_modal').modal('hide');
+      // Load up the course list.
+      window.location = 'courses';
+      }
+      else
+      {
+        alert(json_result.message);
+      }
+    },
+    error: function(xhr,status,error) {
+      // error code here
+    },
+    complete: function(xhr,status) {
+      // completion code here
+    }
+  });
+}
+</script>

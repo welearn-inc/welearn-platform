@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="create-course-container">
+		<div class="row justify-content-center">
+			<div class="col-md-12 col-xl-9">
+				<form method="post" action="{% url 'course-update' %}" id="form-create-course">{% csrf_token %}
+					<div class="form-set">
+						<!-- Step 1 -->
+						<span class="item-title">Course Details</span>
+						<div class="form-item">
+							<div class="form-head">
+								<h2>Update Course</h2>
+								<p>Once we verifiy your course, and if you meet the standards, we’ll publish it.</p>
+							</div>
+							<hr>
+							<div class="form-body">
+								<div class="form-block">
+									<small class="text-danger">{{ form.name.errors }}</small>
+									<legend>Course Title</legend>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="field-block">
+												<label for="course-title">Title *</label>
+												<div class="field">
+													<div class="select">
+														{% render_field form.name class='simplebox form-control mb-2' %}
+														<span class="span-desc">50 character limit</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="field-block">
+												<small class="text-danger">{{ form.headline.errors }}</small>
+												<label for="course-subtitle">Headline *</label>
+												<div class="field">
+													<div class="select">
+														{% render_field form.headline class='simplebox form-control mb-2' %}
+														<span class="span-desc">100 character limit</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="field-block">
+												<label for="course-subtitle">Topic *</label>
+												<div class="field">
+													<div class="select-icon">
+														{% render_field form.category class='simplebox custom-selectbox form-control' %}
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="field-block">
+												<small class="text-danger">{{ form.tags.errors }}</small>
+												<label for="course-subtitle">Tags *</label>
+												<div class="field">
+													<div class="select">
+														{% render_field form.tags class='simplebox custom-selectbox form-control' placeholder='Seperate tags with comma’s' data-role='tagsinput' %}
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="form-block">
+									<legend>The Basics</legend>
+									<div class="row">
+										<div class="col-md-4">
+											<div class="field-block">
+												<label for="course-subtitle">Pricing *</label>
+												<div class="field">
+													<div class="select-icon">
+														{% render_field form.pricing class='simplebox custom-selectbox form-control' %}
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="field-block">
+												<label for="course-language">Language *</label>
+												<div class="field">
+													<div class="select-icon">
+														{% render_field form.language class='simplebox custom-selectbox form-control' %}
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="field-block">
+												<label for="course-language">Level *</label>
+												<div class="field">
+													<div class="select-icon">
+														{% render_field form.level class='simplebox custom-selectbox form-control' %}
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="form-block">
+									<legend>Course Details</legend>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="field-block">
+												<small class="text-danger">{{ form.description.errors }}</small>
+												<label for="course-language">Description *</label>
+												<div class="field">
+													{% render_field form.description class='simplebox form-control mb-2' cols='30' rows='5' %}
+													<span class="span-desc">In english only, no HTML, no web or email address, no CAPS</span>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="field-block">
+												<small class="text-danger">{{ form.goals.errors }}</small>
+												<label for="course_goals">Goals *</label>
+												<span>Maximum of 8</span>
+												<div class="field" data-max='8'>
+													<div class="field-row d-flex">
+														{% render_field form.goals class='simplebox form-control' %}
+														<a href="#" class="btn btn-toggle btn-add"><i></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="field-block">
+												<small class="text-danger">{{ form.benefits.errors }}</small>
+												<label for="course_benefits">Course Benefits *</label>
+												<span>Maximum of 8</span>
+												<div class="field" data-max='8'>
+													<div class="field-row d-flex">
+														{% render_field form.benefits class='simplebox form-control' %}
+														<a href="#" class="btn btn-toggle btn-add"><i></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="form-block">
+									<legend>Upload</legend>
+									<p>Upload an image or video to represent your course.</p>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="field-block">
+												<label for="course_image">Image File *</label>
+												<div class="field">
+													<!-- <input class="custom-file" type="file" id="course_image" name="course_image" data-multiple-caption="{count} files selected" multiple >
+													<label for="course_image">
+														<span class="file-name">No file selected</span>
+														<span class="btn btn-01">Browse...</span>
+													</label> -->
+													<input id="input-b1" name="input-b1" type="file" class="course-file" data-show-preview="false">
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="field-block">
+												<label for="course_video">Video File *</label>
+												<div class="field">
+													<!-- <input class="custom-file" type="file" id="course_video" name="course_video" >
+													<label for="course_video">
+														<span class="file-name">No file selected</span>
+														<span class="btn btn-01">Browse...</span>
+													</label> -->
+													<input id="input-b2" name="input-b1" type="file" class="course-file" data-show-preview="false">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr>
+								<div class="form-block">
+									<button class="btn btn-general btn-submit"><span>Submit</span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}

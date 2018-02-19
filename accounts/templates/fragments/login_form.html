@@ -1,0 +1,36 @@
+<!-- Login form -->
+<form class="form-horizontal ajax-post" role="form" action="{% url 'rest_login' %}">{% csrf_token %}
+  <div class="form-head">
+    <h2>Login</h2>
+  </div>
+  <hr>
+  <div class="form-body">
+    <div class="form-block">
+        <a href="#" class="btn btn-general btn-blue"><i class="fa fa-facebook"></i><span>Login With FaceBook</span></a>
+        <a href="#" class="btn btn-general btn-red"><i class="fa fa-google"></i><span>Login With Google</span></a>
+        <a href="#" class="btn btn-general btn-light-blue"><i class="fa fa-linkedin"></i><span>Login With Linkedin</span></a>
+
+        <div class="col-md-12">
+          <div class="field-block">
+            <label for="course-title">Username</label>
+            <div class="field">
+              <div class="select">
+                <input class="simplebox form-control mb-2" name="username" placeholder="Username">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="field-block">
+            <label for="course-subtitle">Password</label>
+            <div class="field">
+              <div class="select">
+                <input class="simplebox form-control mb-2" name="password" type="password" placeholder="Password">
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-general btn-submit"><span>Login</span></button>
+        </div>
+    </div>
+  </div>
+</form>
