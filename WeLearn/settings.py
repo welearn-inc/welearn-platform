@@ -28,7 +28,7 @@ SECRET_KEY = '{{ secret_key }}'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://welearn-platform.herokuapp.com/']
+ALLOWED_HOSTS = ['welearn-platform.herokuapp.com']
 
 # Application definition
 
