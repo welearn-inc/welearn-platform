@@ -32,10 +32,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
-
+    
     'allauth',
     'allauth.account',
     'rest_auth.registration',
+
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
@@ -98,6 +99,12 @@ DATABASES = {
 
 SITE_ID = 1
 
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
+
 REST_USE_JWT = True
 REST_SESSION_LOGIN = True
 
@@ -111,22 +118,13 @@ LOGOUT_REDIRECT_URL ='/'
 
 TAGGIT_CASE_INSENSITIVE = True
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = True
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 STATIC_URL = '/static/'
-
 STATIC_ROOT = os.path.join(BASE_DIR, "static-server", "static-root")
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static-server', 'media-root')
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
@@ -136,6 +134,3 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "media"),
 )
-
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static-server', 'media-root')
-MEDIA_URL = '/media/'
