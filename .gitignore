@@ -4,6 +4,3 @@ db.sqlite3
 # python cache
 __pycache__/
 
-# migrations
-migrations/
-
