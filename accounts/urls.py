@@ -7,9 +7,9 @@ from django.contrib.auth.views import logout
 from django.views.generic import TemplateView, RedirectView
 
 urlpatterns = [
-    url(r'^profile/$',
-        TemplateView.as_view(template_name="profile.html"),
-        name='profile'),
+    # url(r'^profile/$',
+    #     TemplateView.as_view(template_name="profile.html"),
+    #     name='profile'),
 
     url(r'^signup/$', TemplateView.as_view(template_name="signup.html"),
         name='signup'),
