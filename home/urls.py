@@ -18,8 +18,8 @@ urlpatterns = [
     url(r'^$', home.home_page, name='home'),
 
     # Pages
-    url(r'^terms$', terms.terms_page, name='terms'),
-    url(r'^privacy', privacy.privacy_page, name='privacy'),
+    # url(r'^terms$', terms.terms_page, name='terms'),
+    # url(r'^privacy', privacy.privacy_page, name='privacy'),
 
     # Other Pages
     url(r'^robots\.txt$', txt.robots_txt_page, name='robots'),
