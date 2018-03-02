@@ -3,6 +3,8 @@ from django.contrib import admin
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from rest_framework.authtoken import views
+from django.conf.urls import handler404, handler500
+from home.views import errors
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -16,3 +18,6 @@ urlpatterns = [
     url(r'^api/user/', include('accounts.api.user.urls', namespace='api-user')),
     url(r'^api/courses/', include('courses.api.urls', namespace='api-courses'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = errors.error_404
+handler500 = errors.error_500
