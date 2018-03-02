@@ -1333,32 +1333,6 @@
   </div>
 </section>
 
-<!-- <div class='row'>
-  <div class='col-sm-12'>
-    <h1>Recommended</h1>
-  </div>
-  {% for item in rec_courses %}
-
-  <div class='col-sm-2'>
-    {% include 'courses/snippets/course_featured_display.html' with course=item %}
-  </div>
-  {% if forloop.counter|divisibleby:6 %}
-  {% endif %}
-  {% endfor %}
-</div>
- -->
-
-  
-
-<div class='row'>
-  {% for item in qs %}
-  <div class='col-sm-4'>
-    {% include 'courses/snippets/course_thumbnail_display.html' with course=item %}
-  </div>
-{% cycle '' '' '</div><div class="row">' %}
-  {% endfor %}
-</div>
-
 
 {% endblock content %}
 
