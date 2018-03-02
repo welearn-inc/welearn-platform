@@ -24,9 +24,6 @@ a:hover {
 ul li {
 	list-style: none;
 }
-.container-fluid {
-  padding-top: 72px;
-}
 .btn-add {
 	cursor: pointer;
 }

@@ -17,6 +17,18 @@ class AnonPermissionOnly(permissions.BasePermission):
     def has_permission(self, request, view):
         return not request.user.is_authenticated()
 
+class IsAdminOrReadOnly(permissions.BasePermission):
+    """
+    Allows Admin users to POST and anonymous to GET
+    """
+    def has_permission(self, request, view):
+        # Read permissions are allowed to any request,
+        # so we'll always allow GET, HEAD or OPTIONS requests.
+        if request.method in permissions.SAFE_METHODS:
+            return True
+
+        # User must be Administrator    
+        return request.user.is_staff
 
 class IsOwnerOrReadOnly(permissions.BasePermission):
     """
@@ -30,5 +42,11 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
 
-        # Instance must have an attribute named `author`.
-        return obj.author == request.user
+        # Instance must have an attribute named `user`.
+        return obj.user == request.user
+
+class IsEnrolled(permissions.BasePermission):
+    message = "You need to be authorized to continue. Please enroll to the course first."
+    def has_permission(self, request, view):
+        enrolled = Courses.objects.get(user=request.user).exists()
+        return enrolled

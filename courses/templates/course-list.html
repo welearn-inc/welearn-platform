@@ -17,7 +17,7 @@
     <div class="card-deck">
 
       {% for course in courses %}
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="card">
           {% if course.image != None and course.image != '' %}
           <img class="card-img-top" src="{{ course.image.url }}" alt="{{ course.title }}">

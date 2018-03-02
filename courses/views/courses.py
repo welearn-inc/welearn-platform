@@ -32,8 +32,8 @@ def course_list(request):
 def course_detail(request, slug):
     if request.method == "GET":
         course = get_object_or_404(Course, slug=slug)
-        course.goals = ast.literal_eval(course.goals)
-        course.benefits = ast.literal_eval(course.benefits)
+        # course.goals = ast.literal_eval(course.goals)
+        # course.benefits = ast.literal_eval(course.benefits)
     return render(request, 'course-detail.html', {'course': course})
 
 @login_required()

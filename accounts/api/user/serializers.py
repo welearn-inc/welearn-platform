@@ -27,7 +27,7 @@ class UserDetailSerializer(serializers.ModelSerializer):
         limit = int(limit_query)
       except:
         pass
-    qs = obj.course_set.all().order_by("-timestamp")
+    qs = obj.course_set.all().order_by("-created_date")
     data = {
       'uri': self.get_uri(obj) + "courses/",
       'last': CoursesSerializer(qs.first(), context={'request': request}).data,

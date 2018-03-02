@@ -1,4 +1,4 @@
 try:
-	from .prod import *
+	from .local import *
 except:
 	pass

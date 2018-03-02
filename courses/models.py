@@ -140,28 +140,29 @@ class Course(models.Model):
 
   name            = models.CharField(max_length=50)
   slug            = models.SlugField(unique=True, blank=True)
-
+  user            = models.ForeignKey(settings.AUTH_USER_MODEL)
+  
   headline        = models.CharField(max_length=100, null=True)
   description     = models.TextField(null=True)
-  category        = models.CharField(max_length=140, choices=COURSE_CATEGORY_TYPES, default='General Education')
-  image           = models.ImageField(upload_to=upload_courses_media)
+  category        = models.CharField(max_length=140, choices=COURSE_CATEGORY_TYPES, default='Personal Development')
+  image           = models.ImageField(upload_to=upload_courses_media, blank=True, null=True)
   video           = models.ImageField(upload_to=upload_courses_media, blank=True, null=True)
+
+  goals           = models.TextField(null=True)
+  benefits        = models.TextField(null=True)
 
   pricing         = models.CharField(max_length=6, choices=COURSE_PRICING_CHOICES, default='$ FREE') 
   language        = models.CharField(max_length=10, choices=COURSE_LANGUAGES_CHOICES, default='English')
   level           = models.CharField(max_length=12, choices=COURSE_LEVEL_CHOICES, default='Beginner')
 
-  goals           = models.TextField(null=True)
-  benefits        = models.TextField(null=True)
-
-  published_date  = models.DateField(auto_now_add=True)
+  created_date    = models.DateField(auto_now_add=True)
   modified_date   = models.DateField(auto_now=True)
 
   featured        = models.BooleanField(default=False)
   active          = models.BooleanField(default=True)
 
   students        = models.ManyToManyField(Student)
-  teacher         = models.ForeignKey(Teacher, default=0)
+  teacher         = models.ForeignKey(Teacher, related_name='courses')
 
   tags = TaggableManager()
 
@@ -178,19 +179,15 @@ class Course(models.Model):
     return self.name
 
 class Module(models.Model):
-    name        = models.CharField(max_length=50, null=True)
-    description = models.TextField(null=True)
-    media_url   = models.URLField(null=True)
-    body_text   = models.TextField(null=True)
-    course      = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='modules')
+    user            = models.ForeignKey(settings.AUTH_USER_MODEL)
+    name            = models.CharField(max_length=50, null=True)
+    description     = models.TextField(null=True)
+    media_url       = models.URLField(null=True)
+    body_text       = models.TextField(blank=True, null=True)
+    course          = models.ForeignKey(Course, related_name='modules')
 
-    @property
-    def module_id(self):
-     return self.id
-
-    @property
-    def title(self):
-      return self.name
+    created_date    = models.DateField(auto_now_add=True)
+    modified_date   = models.DateField(auto_now=True)
 
 
 def course_pre_save_receiver(sender, instance, *args, **kwargs):

@@ -5,50 +5,48 @@
 <!-- Course Head 1 Section -->
 <section class="course-head-1">
   <div class="course-head-wrapper">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="course-head-img">
-            <img class="img-responsive" src="{{ course.image.url }}" alt="{{ course.title }}">
-            {% if course.video != None and course.video != '' %}
-              <span class="play-toggle"><i class="fa fa-play"></i></span>
-            {% endif %}
-          </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="course-head-img">
+          <img class="img-responsive" src="{{ course.image.url }}" alt="{{ course.title }}">
+          {% if course.video != None and course.video != '' %}
+          <span class="play-toggle"><i class="fa fa-play"></i></span>
+          {% endif %}
         </div>
-        <div class="col-md-6 pl-md-0">
-          <div class="course-name mb-2"><a>{{ course.headline }}</a></div>
-          <div class="course-title">{{ course.title }}</div>
-          <div class="course-desc"><p>{{ course.description }}</p></div>
-          <ul class="rate-block list-inline">
-            <li>
-              <ul class="list-inline">
-                <li><i class="fa fa-star font-orange" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star font-orange" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star font-orange" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-half-o font-orange" aria-hidden="true"></i></li>
-                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-              </ul>
-            </li>
-            <li><span class="point-rate"><em class="font-white">3.2</em>(15 ratings)</span></li>
-          </ul>
-          <ul class="author-block list-inline">
-            <li>
-              <ul class="list-inline">
-                <li>Created by <a href="#" class="link font-white">John Crestani</a></li>
-                <li>{{ course.students.count }} Students</li>
-                <li>{{ course.level }} Level</li>
-              </ul>
-            </li>
-          </ul>
-        </div>  
-        <div class="col-md-3">
-          <span class="course-tag">Tags: </span>
-          <ul class="course-tag-list">
-            {% for tag in course.tags.all %}
-            <li><a href="#">{{ tag }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
+      </div>
+      <div class="col-md-6 pl-md-0">
+        <div class="course-name mb-2"><a>{{ course.headline }}</a></div>
+        <div class="course-title">{{ course.title }}</div>
+        <div class="course-desc"><p>{{ course.description }}</p></div>
+        <ul class="rate-block list-inline">
+          <li>
+            <ul class="list-inline">
+              <li><i class="fa fa-star font-orange" aria-hidden="true"></i></li>
+              <li><i class="fa fa-star font-orange" aria-hidden="true"></i></li>
+              <li><i class="fa fa-star font-orange" aria-hidden="true"></i></li>
+              <li><i class="fa fa-star-half-o font-orange" aria-hidden="true"></i></li>
+              <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+            </ul>
+          </li>
+          <li><span class="point-rate"><em class="font-white">3.2</em>(15 ratings)</span></li>
+        </ul>
+        <ul class="author-block list-inline">
+          <li>
+            <ul class="list-inline">
+              <li>Created by John Crestani</li>
+              <li>{{ course.students.count }} Students</li>
+              <li>{{ course.level }} Level</li>
+            </ul>
+          </li>
+        </ul>
+      </div>  
+      <div class="col-md-3">
+        <span class="course-tag">Tags: </span>
+        <ul class="course-tag-list">
+          {% for tag in course.tags.all %}
+          <li><a href="#">{{ tag }}</a></li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
   </div>
@@ -65,53 +63,8 @@
           <a class="save-whishlist" href="#"><i class="fa fa-heart-o" aria-hidden="true"></i><small>Save to wishlist</small></a>
         </div>
         <div class="col-md-4 col-xl-3 p-3">
-          <a href="#" class="btn btn-02 mr-2">Preview Course</a>
-          <a href="#" class="btn btn-03">Enroll</a>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Course Goal Section -->
-<section class="course-goal">
-  <div class="container-fluid">
-    <div class="course-wrapper">
-      <div class="row">
-        <div class="col-sm-12 col-md-10 offset-md-1">
-          <div class="course-preview-title">Course Goals</div>
-          <div class="course-content">
-            <ul>
-              {% for key, value in course.goals.items %}
-              <li><p><span class="glyphicon glyphicon-certificate"></span> {{ value }}</p><li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<hr>
-<!-- Course Benefits Section -->
-<section class="course-benefits">
-  <div class="container-fluid">
-    <div class="course-wrapper">
-      <div class="row">
-        <div class="col-sm-12 col-md-10 offset-md-1">
-          <div class="course-preview-title">Course Benefits</div>
-          <div class="row">
-            <div class="col-md-6">
-              {% for key, value in course.benefits.items %}
-                <div class="course-content">
-                  <p>{{ value }}</p>
-                </div>
-                {% if forloop.counter|divisibleby:"3" and not forloop.last %}
-                  </div><div class="col-md-6">
-                {% endif %}
-              {% endfor %}
-            </div>
-          </div>
+          <!-- <a href="#" class="btn btn-02 mr-2">Preview Course</a> -->
+          <a href="{% url 'course-detail' slug=course.slug %}enroll/" class="btn btn-03" style="width:200px">Enroll</a>
         </div>
       </div>
     </div>
@@ -172,7 +125,7 @@
                 <div class="accordion-head">
                   <div class="container">
                     <div class="row row-head reverse">
-                      
+
                       <div class="col-sm-1 col-label">
                         <span class="toggle-label"></span>
                       </div>
@@ -196,7 +149,7 @@
                 <div class="accordion-head">
                   <div class="container">
                     <div class="row row-head reverse">
-                      
+
                       <div class="col-sm-1 col-label">
                         <span class="toggle-label"></span>
                       </div>
@@ -220,7 +173,7 @@
                 <div class="accordion-head">
                   <div class="container">
                     <div class="row row-head reverse">
-                      
+
                       <div class="col-sm-1 col-label">
                         <span class="toggle-label"></span>
                       </div>
@@ -878,14 +831,14 @@
           <div class="row">
             <div class="col-sm-6">
               <figure class="m-0"><img class="block" src="{% static 'images/img_teacher_01.jpg' %}" alt="Teacher IMG"></figure>
-              <ul class="social-link list-unstyled">
+<!--               <ul class="social-link list-unstyled">
                 <li><a href="#"><i class="fa fa-lg fa-facebook" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-lg fa-twitter" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-lg fa-pinterest-p" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-lg fa-google" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-lg fa-linkedin" aria-hidden="true"></i></a></li>
-              </ul>
+              </ul> -->
             </div>
             <div class="col-sm-6">
               <div class="course-instructor-info">
@@ -894,7 +847,7 @@
                   <h4>Marketing Instructor</h4>
                 </div>
                 <p>Since(involuntarily) leaving his crushy job in the corporate world, in just a couple of years he’s gone on to build an empire in the affiliate marketing space. And now he’s taken it upon himself to teach a handful of aspiring marketers how they too can get a piece of the affiliate marketing action.</p>
-                <p><a href="#">View Profile</a></p>
+<!--                 <p><a href="#">View Profile</a></p> -->
               </div>
             </div>
           </div>

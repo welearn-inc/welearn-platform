@@ -24,9 +24,6 @@ a:hover {
 ul li {
 	list-style: none;
 }
-.container-fluid {
-  padding-top: 72px;
-}
 .btn-add {
 	cursor: pointer;
 }
@@ -959,7 +956,7 @@ hr.or-divider:after {
 	background-color: #2e2f33;
 }
 .course-head-wrapper {
-	padding: 130px 30px 50px 30px; 
+	padding: 30px 30px 50px 30px; 
 	color: #fff;
 }
 .course-head-img {
