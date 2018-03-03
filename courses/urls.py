@@ -5,11 +5,13 @@ from django.conf.urls import url
 # from courses.views import teaching
 
 from courses.views import courses
+from courses.views import snippets
 
 urlpatterns = [
     url(r'^courses/$', courses.course_list, name='course-list'),
     url(r'^courses/create/$', courses.course_create, name='course-create'),
     url(r'^courses/create-module/$', courses.module_create, name='module-create'),
+    url(r'^courses/snippets/$',snippets.page, name='course-snippets'),
     url(r'^courses/(?P<slug>[\w-]+)/$', courses.course_detail, name='course-detail'),
     url(r'^courses/(?P<slug>[\w-]+)/edit/$', courses.course_update, name='course-update'),
     url(r'^courses/(?P<slug>[\w-]+)/delete/$', courses.course_delete, name='course-delete'),
