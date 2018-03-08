@@ -8,7 +8,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'AAs65snz9+3vnhjmr3hijb0u@&w68t#5_e8s9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost','welearn-platform.herokuapp.com', 'www.welearn.school', 'welearn.school']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','welearn-platform.herokuapp.com','api.welearn.school']
 
 # Update database configuration with $DATABASE_URL.
 import dj_database_url
