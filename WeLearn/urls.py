@@ -1,23 +1,21 @@
 from django.conf import settings
 from django.contrib import admin
 from django.conf.urls import url, include
-from django.conf.urls.static import static
-from rest_framework.authtoken import views
 from django.conf.urls import handler404, handler500
-from home.views import errors
+from django.http import JsonResponse
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^courses/', include('courses.api.urls', namespace='api-courses'))
+] 
 
-    url(r'', include('home.urls'), name='home'),
-    url(r'', include('accounts.urls'), name='accounts'),
-    url(r'', include('courses.urls'), name='courses'),
+def response404(request, status=404, message='Requested endpoint not found', data=None):
+    data = {'status': status, 'message': message}
+    return JsonResponse(data=data, status=status)
 
-    url(r'^api-token-auth/', views.obtain_auth_token),
-    url(r'^api/auth/', include('accounts.api.urls', namespace='api-auth')),
-    url(r'^api/user/', include('accounts.api.user.urls', namespace='api-user')),
-    url(r'^api/courses/', include('courses.api.urls', namespace='api-courses'))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+def response500(request, status=500, message='Internal Server Error', data=None):
+    data = {'status': status, 'message': message}
+    return JsonResponse(data=data, status=status)
 
-handler404 = errors.error_404
-handler500 = errors.error_500
+handler404 = response404
+handler500 = response500

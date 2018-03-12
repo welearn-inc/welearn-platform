@@ -3,29 +3,27 @@ from django.contrib.auth.models import User
 from rest_framework import views, generics, mixins, permissions
 from rest_framework.response import Response
 
-from accounts.models import Student
-from accounts.models import Teacher
 from courses.models import Course
 
 from .serializers import CoursesSerializer
-from accounts.api.permissions import IsOwnerOrReadOnly, IsAdminOrReadOnly
 
 class CoursesAPIView(mixins.CreateModelMixin, generics.ListAPIView):
   queryset           = Course.objects.all()
-  permission_classes = [IsAdminOrReadOnly]
+  permission_classes = [permissions.IsAuthenticatedOrReadOnly]
   serializer_class   = CoursesSerializer
-  search_fields      = ('user__username', 'name')
-  ordering_fields    = ('user', 'timestamp')
+  search_fields      = ('name', 'headline', 'category')
+  ordering_fields    = ('source', 'timestamp')
   
+  def get_queryset(self):
+    query = self.request.GET.get("q")
+    if query:
+        qs = Course.objects.search(query)
+    else:
+        qs = Course.objects.all()
+    return qs
+
   def post(self, request, *args, **kwargs):
     return self.create(request, *args, **kwargs)
-
-  def perform_create(self, serializer):
-    try:
-      teacher = Teacher.objects.get(user=self.request.user)
-    except Teacher.DoesNotExist:
-       teacher = Teacher.objects.create(user=self.request.user)
-    serializer.save(user=self.request.user, teacher=teacher)
 
   def post_save(self, course, *args, **kwargs):
     if type(course.tags) is list:
@@ -38,7 +36,7 @@ class CoursesAPIDetailView(
   mixins.UpdateModelMixin,
   mixins.DestroyModelMixin,
   generics.RetrieveAPIView):
-  permission_classes    = [IsOwnerOrReadOnly] 
+  permission_classes    = [permissions.IsAdminUser] 
   serializer_class      = CoursesSerializer
   lookup_field          = 'slug'
 
@@ -56,16 +54,3 @@ class CoursesAPIDetailView(
 
   def delete(self, request, *args, **kwargs):
     return self.destroy(request, *args, **kwargs)
-
-class CoursesEnrollView(views.APIView):
-  def post(self, request, slug, format=None):
-    course = get_object_or_404(Course, slug=slug)
-    student = Student.objects.get(user=request.user)
-    try:
-      Course.objects.get(
-          slug=slug,
-          students__student_id=student.student_id
-      )
-    except Course.DoesNotExist:
-        course.students.add(student)
-    return Response({'status' : 'success', 'message' : 'enrolled' })
