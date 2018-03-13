@@ -63,18 +63,18 @@ class Course(models.Model):
 
   source          = models.CharField(max_length=20, null=True)
   
-  name            = models.CharField(max_length=50)
-  slug            = models.SlugField(unique=True, blank=True)
+  name            = models.CharField(max_length=100)
+  slug            = models.SlugField(max_length=255, unique=True, blank=True)
   
-  headline        = models.CharField(max_length=100, null=True)
+  headline        = models.CharField(max_length=255, null=True)
   category        = models.CharField(max_length=140, default='Personal Development')
   image_url       = models.TextField(null=True)
 
-  lectures        = models.CharField(max_length=4, null=True)
-  duration        = models.CharField(max_length=3, null=True) 
+  lectures        = models.CharField(max_length=10, null=True)
+  duration        = models.CharField(max_length=10, null=True) 
 
   language        = models.CharField(max_length=10, choices=COURSE_LANGUAGES_CHOICES, default='English')
-  rating          = models.CharField(max_length=3, null=True) 
+  rating          = models.CharField(max_length=10, null=True) 
   level           = models.CharField(max_length=12, choices=COURSE_LEVEL_CHOICES, default='Beginner')
   price           = models.CharField(max_length=10, choices=COURSE_PRICING_CHOICES, default='$ FREE') 
 
@@ -89,7 +89,7 @@ class Course(models.Model):
   instructor      = models.CharField(max_length=100, null=True)
 
   tags            = TaggableManager()
-  objects 		    = CourseManager()
+  objects 		  = CourseManager()
 
   def __str__(self):
     return self.name
